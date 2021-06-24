@@ -1,0 +1,84 @@
+{
+  "name": "unitex",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/node": "^15.12.4",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.8",
+    "@types/react-router-dom": "^5.1.7",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "babel-eslint": "^10.1.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^11.0.0",
+    "mobx": "^6.3.2",
+    "mobx-react": "^7.2.0",
+    "node-sass": "4.14.1",
+    "prettier": "^2.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.19.0",
+    "typescript": "^4.3.4",
+    "web-vitals": "^1.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ],
+    "*.{ts,tsx,js,jsx}": [
+      "eslint"
+    ],
+    "*.{css,scss}": [
+      "stylelint"
+    ]
+  },
+  "scripts": {
+    "start": "env-cmd -f .env.dev react-scripts start",
+    "start-prod": "env-cmd -f .env.prod react-scripts start",
+    "build": "env-cmd -f .env.dev react-scripts build",
+    "build-prod": "env-cmd -f .env.prod react-scripts build",
+    "prettify-all": "prettier --write .",
+    "lint": "eslint ./",
+    "lint-style": "stylelint **/*.{scss,css} --fix",
+    "lint-fix": "eslint ./ --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
